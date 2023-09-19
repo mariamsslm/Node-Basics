@@ -88,6 +88,7 @@ function exit(){
   console.log('exiting now , goodbye!')
   process.exit();
 }
+// show me list of  possible commands 
 function listCommands(){
   console.log('hello\n'+ 'quit\n'+ 'exit\n');
 }
