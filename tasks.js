@@ -34,16 +34,20 @@ function startApp(name){
  * @returns {void}
  */
 function onDataReceived(text) {
+
+  let name = text.split(" ")
+  let secondword = name[1];
+  
   if (text === 'quit\n' ){
     quit();
   }
   else if (text === 'exit\n'){
     exit();
   }
-  else if(text === 'hello\n'){
-    hello();
+  else if(name[0].trim() === 'hello'){
+    hello(secondword.replace("\n",""));
   }
-  if(text === 'help\n'){
+  else if(text === 'help\n'){
     listCommands();
   }
   else{
@@ -70,8 +74,8 @@ function unknownCommand(c){
  *
  * @returns {void}
  */
-function hello(){
-  console.log('hello!')
+function hello(secondword){
+  console.log(`hello ${secondword}!`)
 }
 
 
