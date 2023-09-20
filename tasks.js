@@ -45,9 +45,9 @@ function onDataReceived(text) {
   else if (text === 'exit\n'){
     exit();
   }
-  else if(name[0].trim() === 'hello'){
+  else if(name[0] === 'hello\n' || name[0] === 'hello'){
     //console.log('hello\n')
-    hello(secondword.replace("\n",""));
+    hello(secondword);
   }
   else if(text === 'help\n'){
     listCommands();
@@ -76,8 +76,14 @@ function unknownCommand(c){
  *
  * @returns {void}
  */
-function hello(secondword){
-  console.log(`hello ${secondword}!`)
+function hello(name){
+  if(name == null || name == "" || name == undefined){
+    console.log("Hello!")
+  }else{
+    let empty = `hello ${name}!`;
+     empty= empty.replace("\n" , "");
+    console.log(`${empty}`);
+  }
 }
 
 
