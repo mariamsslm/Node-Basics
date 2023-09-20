@@ -35,6 +35,7 @@ function startApp(name){
  */
 function onDataReceived(text) {
 
+
   let name = text.split(" ")
   let secondword = name[1];
   
@@ -45,6 +46,7 @@ function onDataReceived(text) {
     exit();
   }
   else if(name[0].trim() === 'hello'){
+    //console.log('hello\n')
     hello(secondword.replace("\n",""));
   }
   else if(text === 'help\n'){
