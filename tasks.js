@@ -102,7 +102,7 @@ function exit(){
 }
 // show me list of  possible commands 
 function listCommands(){
-  console.log('hello\n'+ 'quit\n'+ 'exit\n');
+  console.log("'hello (name)'\n'quit'\n'exit'");
 }
 
 // The following line starts the application
