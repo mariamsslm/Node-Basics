@@ -117,9 +117,9 @@ function exit(){
   console.log('exiting now , goodbye!')
   process.exit();
 }
-// show me list of  possible commands 
+// show me list of  possible commands (hello , exit , add , remove, show list  )
 function help(){
-  console.log("'hello (name)'\n'quit'\n'exit'");
+  console.log("'hello'\n'hello with name'\n'quit'\n'exit'\n'show list'\n'add to arr'\n'remove from arr'");
 }
 
 function list(){
@@ -128,9 +128,9 @@ function list(){
   }
 
 }
-
+// add element to arr
 function add(ad){
-  if(ad === ""){
+  if(ad === ""){ 
     console.log("error");
 
   }
@@ -141,10 +141,11 @@ function add(ad){
 
 
 }
+// remove element from arr
 function remove(rem){
   for(let i=0; i<arr.length ;i++){
 
-    if(rem === undefined){
+    if(rem === undefined){// check if just remove delete last element
       arr.pop();
     }
     else{
