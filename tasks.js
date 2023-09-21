@@ -34,6 +34,7 @@ function startApp(name){
  * @returns {void}
  */
 function onDataReceived(text) {
+  
 
 
   let name = text.split(" ")
@@ -50,8 +51,13 @@ function onDataReceived(text) {
     hello(secondword);
   }
   else if(text === 'help\n'){
-    listCommands();
+    help();
   }
+  else if(text === 'list\n'){
+    list();
+  }
+
+  
   else{
     unknownCommand(text);
   }
@@ -86,6 +92,8 @@ function hello(name){
   }
 }
 
+let arr = ["exit to exiting" ,"say Hello", "say hello with name", " help to check list of commands"]
+
 
 /**
  * Exits the application
@@ -101,8 +109,22 @@ function exit(){
   process.exit();
 }
 // show me list of  possible commands 
-function listCommands(){
+function help(){
   console.log("'hello (name)'\n'quit'\n'exit'");
+}
+
+function list(){
+  for(let i=0; i<arr.length; i++){
+    console.log(i+1 +"- "+ arr[i]);
+  }
+
+}
+
+function add(){
+
+}
+function remove(){
+
 }
 
 // The following line starts the application
