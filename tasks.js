@@ -62,6 +62,9 @@ function onDataReceived(text) {
   else if(task === 'add'){
     add(added);
   }
+  else if (task === 'remove'){
+    remove(added);
+  }
 
   
   else{
@@ -126,8 +129,8 @@ function list(){
 
 }
 
-function add(s){
-  if(s === ""){
+function add(ad){
+  if(ad === ""){
     console.log("error");
 
   }
@@ -138,8 +141,19 @@ function add(s){
 
 
 }
-function remove(){
+function remove(rem){
+  for(let i=0; i<arr.length ;i++){
 
+    if(rem === undefined){
+      arr.pop();
+    }
+    else{
+      arr.splice(rem-1, 1)
+     
+    }
+    
+  }
+  console.log(arr);
 }
 
 // The following line starts the application
