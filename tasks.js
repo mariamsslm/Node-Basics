@@ -37,24 +37,30 @@ function onDataReceived(text) {
   
 
 
-  let name = text.split(" ")
-  let secondword = name[1];
+  let name = text.trim()
+  let part = name.split(' ')
+  let task = part[0]
+  let added = part.slice(1).join(' ')
+
   
-  if (text === 'quit\n' ){
+  if ( task === 'quit' ){
     quit();
   }
-  else if (text === 'exit\n'){
+  else if (task === 'exit'){
     exit();
   }
-  else if(name[0] === 'hello\n' || name[0] === 'hello'){
-    //console.log('hello\n')
-    hello(secondword);
+  else if(task === 'hello'){
+    //console.log('hello')
+    hello(added);
   }
-  else if(text === 'help\n'){
+  else if(task === 'help'){
     help();
   }
-  else if(text === 'list\n'){
+  else if(task === 'list'){
     list();
+  }
+  else if(task === 'add'){
+    add(added);
   }
 
   
@@ -120,7 +126,16 @@ function list(){
 
 }
 
-function add(){
+function add(s){
+  if(s === ""){
+    console.log("error");
+
+  }
+  else{
+    arr.push(s)
+  }
+  console.log(arr)
+
 
 }
 function remove(){
